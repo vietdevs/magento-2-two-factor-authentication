@@ -18,9 +18,30 @@
  * @copyright   Copyright (c) Mageplaza (https://www.mageplaza.com/)
  * @license     https://www.mageplaza.com/LICENSE.txt
  */
+class GoogleAuth_Autoload
+{
+    public static function autoload ($class) {
+        // project-specific namespace prefix
+        $prefix = 'GoogleAuth';
+        // base directory for the namespace prefix
+        $baseDir = __DIR__ . '/PHPGangsta/GoogleAuthenticator/';
+        // does the class use the namespace prefix?
+        $len = strlen($prefix);
 
-\Magento\Framework\Component\ComponentRegistrar::register(
-    \Magento\Framework\Component\ComponentRegistrar::MODULE,
-    'Mageplaza_TwoFactorAuth',
-    __DIR__
-);
+        if (strncmp($prefix, $class, $len) !== 0) {
+            // no, move to the next registered autoloader
+            return;
+        }
+        // get the relative class name
+        $relativeClass = substr($class, $len);
+        // replace the namespace prefix with the base directory, replace namespace
+        // separators with directory separators in the relative class name, append
+        // with .php
+        $file = rtrim($baseDir, '/') . '/' . str_replace('\\', '/', $relativeClass) . '.php';
+        // if the file exists, require it
+        if (file_exists($file)) {
+            require $file;
+        }
+    }
+}
+spl_autoload_register(['GoogleAuth_Autoload', 'autoload']);

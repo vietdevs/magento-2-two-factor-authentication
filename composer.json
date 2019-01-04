@@ -1,26 +1,30 @@
 {
-  "name": "mageplaza/module-two-factor-authentication",
-  "description": "Magento 2 Two Factor Authentication Extension",
-  "require": {
-    "mageplaza/module-core": "^1.4.0"
-  },
-  "type": "magento2-module",
-  "version": "1.0.0",
-  "license": "proprietary",
-  "authors": [
-    {
-      "name": "Mageplaza",
-      "email": "support@mageplaza.com",
-      "homepage": "https://www.mageplaza.com",
-      "role": "Technical Support"
-    }
-  ],
-  "autoload": {
-    "files": [
-      "registration.php"
+    "name": "phpgangsta/googleauthenticator",
+    "description": "Google Authenticator 2-factor authentication",
+    "version": "1.0.0",
+    "type": "library",
+    "keywords": ["GoogleAuthenticator", "TOTP", "rfc6238"],
+    "license": "BSD-4-Clause",
+    "authors": [
+        {
+            "name": "Michael Kliewe",
+            "email": "info@phpgangsta.de",
+            "homepage": "http://www.phpgangsta.de/",
+            "role": "Developer"
+        }
     ],
-    "psr-4": {
-      "Mageplaza\\TwoFactorAuth\\": ""
-    }
-  }
+    "support": {
+        "source": "https://github.com/PHPGangsta/GoogleAuthenticator",
+        "issues": "https://github.com/PHPGangsta/GoogleAuthenticator/issues"
+    },
+    "require": {
+        "php": ">=5.3"
+    },
+	"autoload": {
+		"classmap": ["PHPGangsta/GoogleAuthenticator.php"]
+	}
 }
+
+
+
+
