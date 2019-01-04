@@ -18,13 +18,13 @@
  * @copyright   Copyright (c) Mageplaza (https://www.mageplaza.com/)
  * @license     https://www.mageplaza.com/LICENSE.txt
  */
-class GoogleAuth_Autoload
+class PHPGangsta_Autoload
 {
     public static function autoload ($class) {
         // project-specific namespace prefix
-        $prefix = 'GoogleAuth';
+        $prefix = 'PHPGangsta';
         // base directory for the namespace prefix
-        $baseDir = __DIR__ . '/PHPGangsta/GoogleAuthenticator/';
+        $baseDir = __DIR__ . '/PHPGangsta/';
         // does the class use the namespace prefix?
         $len = strlen($prefix);
 
@@ -34,14 +34,16 @@ class GoogleAuth_Autoload
         }
         // get the relative class name
         $relativeClass = substr($class, $len);
+
         // replace the namespace prefix with the base directory, replace namespace
         // separators with directory separators in the relative class name, append
         // with .php
-        $file = rtrim($baseDir, '/') . '/' . str_replace('\\', '/', $relativeClass) . '.php';
+        $file = rtrim($baseDir, '/') .  str_replace('\\', '/', $relativeClass) . '.php';
+
         // if the file exists, require it
         if (file_exists($file)) {
             require $file;
         }
     }
 }
-spl_autoload_register(['GoogleAuth_Autoload', 'autoload']);
+spl_autoload_register(['PHPGangsta_Autoload', 'autoload']);

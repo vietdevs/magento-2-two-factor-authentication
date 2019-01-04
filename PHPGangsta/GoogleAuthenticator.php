@@ -1,5 +1,7 @@
 <?php
 
+namespace PHPGangsta;
+
 /**
  * PHP Class for handling Google Authenticator 2-factor authentication.
  *
@@ -9,7 +11,7 @@
  *
  * @link http://www.phpgangsta.de/
  */
-class PHPGangsta_GoogleAuthenticator
+class GoogleAuthenticator
 {
     protected $_codeLength = 6;
 
