@@ -18,13 +18,13 @@
  * @copyright   Copyright (c) Mageplaza (https://www.mageplaza.com/)
  * @license     https://www.mageplaza.com/LICENSE.txt
  */
-class PHPGangsta_Autoload
+class PhpUserAgent_Autoload
 {
     public static function autoload ($class) {
         // project-specific namespace prefix
-        $prefix = 'PHPGangsta';
+        $prefix = 'Source';
         // base directory for the namespace prefix
-        $baseDir = __DIR__ . '/PHPGangsta/';
+        $baseDir = __DIR__ . '/Source/';
         // does the class use the namespace prefix?
         $len = strlen($prefix);
 
@@ -46,4 +46,4 @@ class PHPGangsta_Autoload
         }
     }
 }
-spl_autoload_register(['PHPGangsta_Autoload', 'autoload']);
+spl_autoload_register(['PhpUserAgent_Autoload', 'autoload']);
